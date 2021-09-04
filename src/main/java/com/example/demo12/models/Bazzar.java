@@ -14,7 +14,6 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Entity(name = "bazzar")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Bazzar implements  Serializable{
 
     @Id

@@ -16,7 +16,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/bazzar")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class BazzarController {
     @Autowired
     private BazzarRepository bazzarRepository;
