@@ -22,9 +22,19 @@ public class Bazzar implements  Serializable{
 
     private String bazzar_item;
 
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
     private Float price;
 
     private Float quantity;
+
+    private String unit;
 
     public User getUser() {
         return user;
@@ -40,7 +50,7 @@ public class Bazzar implements  Serializable{
 
     private  Date updated_on;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "user_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
