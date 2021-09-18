@@ -37,7 +37,7 @@ public class Bazzar implements  Serializable{
     private String unit;
 
     public User getUser() {
-        return user;
+        return user == null ? new User() : user;
     }
 
     public void setUser(User user) {
@@ -50,7 +50,7 @@ public class Bazzar implements  Serializable{
 
     private  Date updated_on;
 
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
     @JoinColumn(name = "user_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
